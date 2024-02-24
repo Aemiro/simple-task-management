@@ -1,4 +1,3 @@
-import { CurrentUser } from 'modules/auth/decorators/current-user.decorator';
 import { UserInfo } from '@user/user-info.dto';
 import {
   CollectionQuery,
@@ -30,6 +29,7 @@ import {
 import { ProjectResponse } from '@project/usecases/projects/project.response';
 import { ProjectCommands } from '@project/usecases/projects/project.usecase.commands';
 import { ProjectQueries } from '@project/usecases/projects/project.usecase.queries';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @Controller('projects')
 @ApiTags('projects')

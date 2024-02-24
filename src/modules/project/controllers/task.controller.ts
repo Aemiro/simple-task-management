@@ -1,4 +1,3 @@
-import { CurrentUser } from '@auth/decorators/current-user.decorator';
 import { UserInfo } from '@user/user-info.dto';
 import {
   CollectionQuery,
@@ -30,6 +29,7 @@ import {
 import { TaskResponse } from '@project/usecases/tasks/task.response';
 import { TaskCommand } from '@project/usecases/tasks/task.usecase.commands';
 import { TaskQuery } from '@project/usecases/tasks/task.usecase.queries';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @Controller('tasks')
 @ApiTags('tasks')

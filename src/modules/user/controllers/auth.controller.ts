@@ -1,8 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 
 import { ChangePasswordCommand, UserLoginCommand } from '@user/auth.commands';
-import { AllowAnonymous } from 'modules/auth/decorators/allow-anonymous.decorator';
-import { CurrentUser } from 'modules/auth/decorators/current-user.decorator';
 import { UserInfo } from '@user/user-info.dto';
 import { Util } from '@libs/common/util';
 import {
@@ -18,6 +16,8 @@ import {
 import { ApiTags } from '@nestjs/swagger';
 import { AuthService } from '@user/auth.service';
 import { JwtAuthGuard } from '@user/guards/jwt-auth.guard';
+import { AllowAnonymous } from '@user/decorators/allow-anonymous.decorator';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {

@@ -1,4 +1,3 @@
-import { CurrentUser } from 'modules/auth/decorators/current-user.decorator';
 import { UserInfo } from '@user/user-info.dto';
 import { CollectionQuery } from '@libs/collection-query/collection-query';
 import { ApiPaginatedResponse } from '@libs/response-format/api-paginated-response';
@@ -27,6 +26,7 @@ import {
 import { UserResponse } from '@user/usecases/users/user.response';
 import { UserCommands } from '@user/usecases/users/user.usecase.commands';
 import { UserQuery } from '@user/usecases/users/user.usecase.queries';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @Controller('users')
 @ApiTags('users')

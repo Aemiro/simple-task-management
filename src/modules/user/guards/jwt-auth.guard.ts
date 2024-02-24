@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
-import { ALLOW_ANONYMOUS_META_KEY } from '../../auth/decorators/allow-anonymous.decorator';
+import { ALLOW_ANONYMOUS_META_KEY } from '@user/decorators/allow-anonymous.decorator';
 
 Injectable();
 export class JwtAuthGuard extends AuthGuard('jwt') {
