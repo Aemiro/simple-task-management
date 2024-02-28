@@ -2,7 +2,6 @@ import { UserInfo } from './user-info.dto';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, MaxLength, MinLength } from 'class-validator';
 import { Match } from './decorators/match.decorator';
-
 export class UserLoginCommand {
   @ApiProperty()
   @IsNotEmpty()
