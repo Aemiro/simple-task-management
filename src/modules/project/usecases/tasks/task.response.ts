@@ -47,7 +47,7 @@ export class TaskResponse {
     taskResponse.priority = taskEntity.priority;
     taskResponse.dueDate = taskEntity.dueDate;
     taskResponse.projectId = taskEntity.projectId;
-
+    taskResponse.assigneeId = taskEntity.assigneeId;
     if (taskEntity.project) {
       taskResponse.project = ProjectResponse.fromEntity(taskEntity.project);
     }
