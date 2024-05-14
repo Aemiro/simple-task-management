@@ -71,16 +71,16 @@ export class TasksController {
   @ApiPaginatedResponse(TaskResponse)
   async getUserTasks(
     @CurrentUser() user: UserInfo,
-    @Query('userId') userId: string,
+    @Param('userId') userId: string,
     @Query() query: CollectionQuery,
   ) {
     return this.taskQueries.getUserTasks(userId, query);
   }
-  @Get('get-project-tasks/:userId')
+  @Get('get-project-tasks/:projectId')
   @ApiPaginatedResponse(TaskResponse)
   async getProjectTasks(
     @CurrentUser() user: UserInfo,
-    @Query('projectId') projectId: string,
+    @Param('projectId') projectId: string,
     @Query() query: CollectionQuery,
   ) {
     return this.taskQueries.getProjectTasks(projectId, query);
