@@ -76,7 +76,6 @@ export class UserCommands /*implements OnModuleInit*/ {
         `User already exist with this email Address`,
       );
     }
-    delete command.password;
     userDomain.email = command.email;
     userDomain.name = command.name;
     userDomain.isActive = command.isActive;

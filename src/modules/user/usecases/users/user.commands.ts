@@ -1,5 +1,5 @@
 import { UserInfo } from '@user/user-info.dto';
-import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsEnum, IsNotEmpty } from 'class-validator';
 import { User } from '@user/domains/users/user';
 import { Gender } from '@libs/common/enums';
@@ -44,14 +44,37 @@ export class CreateUserCommand {
     return userDomain;
   }
 }
-export class UpdateUserCommand extends PartialType(CreateUserCommand) {
+export class UpdateUserCommand {
   @ApiProperty({
     example: 'd02dd06f-2a30-4ed8-a2a0-75c683e3092e',
   })
   @IsNotEmpty()
   id: string;
   @ApiProperty()
+  @IsNotEmpty()
+  name: string;
+  @ApiProperty({
+    example: 'someone@gmail.com',
+  })
+  @IsEmail()
+  email: string;
+  @ApiProperty({
+    example: '+251911111111',
+  })
+  @IsNotEmpty()
+  phoneNumber: string;
+  @ApiProperty({
+    enum: Gender,
+  })
+  @IsEnum(Gender, {
+    message: 'User Gender must be either male or female',
+  })
+  gender: string;
+  @ApiProperty()
+  jobTitle: string;
+  @ApiProperty()
   isActive: boolean;
+  currentUser: UserInfo;
 }
 export class ArchiveUserCommand {
   @ApiProperty({
