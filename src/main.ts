@@ -25,17 +25,13 @@ async function bootstrap() {
       persistAuthorization: false,
       docExpansion: 'none',
     },
-    customSiteTitle: 'Kachamale Software Solution API Documentation',
+    customSiteTitle: 'Task Management API Documentation',
   };
   const config = new DocumentBuilder()
-    .setTitle('Kachamale Software Solution ')
+    .setTitle('Tria PLC')
     .setDescription('Task Management API Documentation')
     .setVersion('1.0')
-    .setContact(
-      'Kachamale Software Solution',
-      'https://kachamale.com',
-      'kachamale@info.com',
-    )
+    .setContact('Tria', 'https://triaplc.com', 'info@tria.com')
     .addBearerAuth(
       {
         type: 'http',
